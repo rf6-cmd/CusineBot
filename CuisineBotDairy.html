@@ -3,15 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Website</title>
-
-
-<style>
-  body {
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
     background-color: #F2DDA7; /* You can use any color name, hex, rgb, etc. */
-  }
-</style>
-<head>
+    }
+    .box {
+    width: 300px;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    margin: 10px auto;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left; 
+    }
+
+    .interactive:hover {
+      border: 5px solid #FCBA0F; /* Change to any color you like */
+    }
+    .box-link {
+      text-decoration: none; /* Removes underline */
+      display: block; /* Makes the link fill the box */
+    }
+    a {
+      color: black;         /* Change to any color you want */
+      text-decoration: none; /* Removes the underline */
+    }
+    .interactive.selected {
+      border: 5px solid #fc910f;
+    }
+  </style>
+</head>
 
 
 
@@ -19,98 +47,70 @@
   <h1 style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5rem;">CuisineBot</h1>
   <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2rem;">Dairy</p>
 
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <div class="box interactive" data-name="Butter">Butter
+    <img src="https://i.postimg.cc/Y013FWDb/i-Stock-000006937653Small.jpg" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Buttermilk">Buttermilk
+    <img src="https://i.postimg.cc/g2MK3d4X/Template-Size-for-Blog-Photos-12-500x500.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cheese">Cheese
+    <img src="https://i.postimg.cc/Mpryv5K2/Guide-to-cheese-1024x851.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Clottedcream">Clotted cream
+    <img src="https://i.postimg.cc/52Z6hR2C/clottedcream-blog-4-of-8-2.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Condensedmilk">Condensed milk
+    <img src="https://i.postimg.cc/50fN1dds/sweetend-condensed-milk-square.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cottagecheese">Cottage cheese
+    <img src="https://i.postimg.cc/yxQNvfGS/ba-cottage-cheese-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cream">Cream
+    <img src="https://i.postimg.cc/9fhct5fn/Chantilly-cream-5.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Creamcheese">Cream cheese
+    <img src="https://i.postimg.cc/zGmN8ZTV/Easiest-Homemade-Cream-Cheese-FEATURE.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Custard">Custard
+    <img src="https://i.postimg.cc/sfqd4d6G/Custard.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Evaporatedmilk">Evaporated milk
+    <img src="https://i.postimg.cc/qvLpLDCB/1633333315185.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="IceCream">Ice Cream
+    <img src="https://i.postimg.cc/nLrf1FJB/vegan-vanilla-ice-cream-featured.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Kefir">Kefir
+    <img src="https://i.postimg.cc/QxqLG9NQ/eating-grains-alt-634x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Powderedmilk">Powedered milk
+    <img src="https://i.postimg.cc/j2Q1bmTY/100071-Bakers-Dry-Milk-Powder-1-01800.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sourcream">Sour creaam
+    <img src="https://i.postimg.cc/nrZd02mr/Sour-Cream-chips-above.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Whey">Whey
+    <img src="https://i.postimg.cc/kgZfkq8m/b8f20ba454daac59-XJWFh3d0-large.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Wheyprotein">Whey protein
+    <img src="https://i.postimg.cc/43VbqtsT/56.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Whippedcream">Whipped cream
+    <img src="https://i.postimg.cc/d1ndcjXt/Whipped-Cream-Recipe-SQ-500x500.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Yogurt">Yogurt
+    <img src="https://i.postimg.cc/3xpvxT6S/How-to-Make-Yogurt-7.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
 </body>
-
-<a href="CusineBot.html" class="box-link">
-<div class="box interactive">Back
-<img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-
-</div>
- <style> .box {
-  width: 300px;
-  height: 100px;
-  padding-top: 30px;
-  padding-left: 20px;
-  margin: 10px auto;
-  background-color: #f9f9f9;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: left; 
-}
-.interactive:hover {
-  border: 5px solid #FCBA0F; /* Change to any color you like */
-}
-.box-link {
-  text-decoration: none; /* Removes underline */
-  display: block; /* Makes the link fill the box */
-}
-a {
-  color: black;         /* Change to any color you want */
-  text-decoration: none; /* Removes the underline */
-}
-
-</style>
-</a>
-
-<div class="box interactive">Butter
-  <img src="https://i.postimg.cc/Y013FWDb/i-Stock-000006937653Small.jpg" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">buttermilk
-  <img src="https://i.postimg.cc/g2MK3d4X/Template-Size-for-Blog-Photos-12-500x500.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Cheese
-  <img src="https://i.postimg.cc/Mpryv5K2/Guide-to-cheese-1024x851.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Clotted cream
-  <img src="https://i.postimg.cc/52Z6hR2C/clottedcream-blog-4-of-8-2.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Condensed milk
-  <img src="https://i.postimg.cc/50fN1dds/sweetend-condensed-milk-square.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Cottage cheese
-  <img src="https://i.postimg.cc/yxQNvfGS/ba-cottage-cheese-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Cream
-  <img src="https://i.postimg.cc/9fhct5fn/Chantilly-cream-5.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Cream cheese
-  <img src="https://i.postimg.cc/zGmN8ZTV/Easiest-Homemade-Cream-Cheese-FEATURE.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Custard
-  <img src="https://i.postimg.cc/sfqd4d6G/Custard.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Evaporated milk
-  <img src="https://i.postimg.cc/qvLpLDCB/1633333315185.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Ice Cream
-  <img src="https://i.postimg.cc/nLrf1FJB/vegan-vanilla-ice-cream-featured.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Kefir
-  <img src="https://i.postimg.cc/QxqLG9NQ/eating-grains-alt-634x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Powedered milk
-  <img src="https://i.postimg.cc/j2Q1bmTY/100071-Bakers-Dry-Milk-Powder-1-01800.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Sour creaam
-  <img src="https://i.postimg.cc/nrZd02mr/Sour-Cream-chips-above.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Whey
-  <img src="https://i.postimg.cc/kgZfkq8m/b8f20ba454daac59-XJWFh3d0-large.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Whey protein
-  <img src="https://i.postimg.cc/43VbqtsT/56.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Whipped cream
-  <img src="https://i.postimg.cc/d1ndcjXt/Whipped-Cream-Recipe-SQ-500x500.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<div class="box interactive">Yogurt
-  <img src="https://i.postimg.cc/3xpvxT6S/How-to-Make-Yogurt-7.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-<a href="CusineBot.html" class="box-link">
-<div class="box interactive">Back
-  <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
-</div>
-</a>
+</html>

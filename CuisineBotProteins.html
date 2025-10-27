@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+    background-color: #F2DDA7; /* You can use any color name, hex, rgb, etc. */
+    }
+    .box {
+    width: 300px;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    margin: 10px auto;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left; 
+    }
+
+    .interactive:hover {
+      border: 5px solid #FCBA0F; /* Change to any color you like */
+    }
+    .box-link {
+      text-decoration: none; /* Removes underline */
+      display: block; /* Makes the link fill the box */
+    }
+    a {
+      color: black;         /* Change to any color you want */
+      text-decoration: none; /* Removes the underline */
+    }
+    .interactive.selected {
+      border: 5px solid #fc910f;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <h1 style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2rem;">Proteins</p>
+
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <div class="box interactive" data-name="Almonds">Almonds
+    <img src="https://i.postimg.cc/3RMVN1zt/Untitleddesign-16.webp" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Almonds">Anchovies
+    <img src="https://i.postimg.cc/fW8Cg5Bt/Anchovies-garlic-opentin.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Chickenbreast">Chicken breast
+    <img src="https://i.postimg.cc/vmy5m632/Chicken-Breast.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Clams">Clams
+    <img src="https://i.postimg.cc/FRRdfbcC/HD-201007-r-sailors-clams-079d35aa081d442596158ffa42c44d1b.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cod">Cod
+    <img src="https://i.postimg.cc/wxkxKRm9/baked-cod-featured-2021.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Crab">Crab
+    <img src="https://i.postimg.cc/HWvK7pGh/1568735460995.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="DuckBreast">Duck breast
+    <img src="https://i.postimg.cc/jqn9Npss/DSC-0925bmoulardduckbreatweb-498x498-crop-center.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Eggs">Eggs
+    <img src="https://i.postimg.cc/zGz0d61W/Pressure-Cooker-Hard-Boiled-Eggs-EXPS-TOHD24-258639-Christine-Ma-3.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Goatmeat">Goat meat
+    <img src="https://i.postimg.cc/d083LHLZ/IMG-1509-1708626244.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Groundbeef">Ground beef
+    <img src="https://i.postimg.cc/mDg4B8MT/IMG-3660-58558.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Kidneybeans">Kidney beans
+    <img src="https://i.postimg.cc/qR5P004W/81uo-HWrn-PPL-01ce1590-2306-470e-bcd0-ab0c2e38a99c-700x700.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lamb">Lamb
+    <img src="https://i.postimg.cc/rF1qG08T/lamb-chops-5-1200.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lentils">Lentils
+    <img src="https://i.postimg.cc/4Ngg3fpz/how-to-cook-red-lentils-main-1200-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lobster">Lobster
+    <img src="https://i.postimg.cc/C109pfmn/Atlantic-Lobster-900x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Mutton">Mutton
+    <img src="https://i.postimg.cc/YCgX2C4b/1629839385538.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Peanutbutter">Peanut butter
+    <img src="https://i.postimg.cc/jjthsQYD/homemade-peanut-butter-1x1-2.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Pork">Pork
+    <img src="https://i.postimg.cc/52MB3q03/six-hour-pork-roast.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Salmon">Salmon
+    <img src="https://i.postimg.cc/cLNMCftF/Baked-Salmon-Re-Edited-LR.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sardines">Sardines
+    <img src="https://i.postimg.cc/13PwsPLs/k-Photo-Series-2020-03-love-letter-sardine-sandwich-LL-Sardine1.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sausage">Sausage
+    <img src="https://i.postimg.cc/ncfQGpV1/Baked-Italian-Sausage.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Shrimp">Shrimp
+    <img src="https://i.postimg.cc/1XGXjVRC/shrimp-main-1200.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Tofu">Tofu
+    <img src="https://i.postimg.cc/R0WFzDVM/tofu-6a6a4ef.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Trout">Trout
+    <img src="https://i.postimg.cc/J7xWPQMp/Grilled-Rainbow-Trout-Remoulade-Sauce-HP.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Tuna">Tuna
+    <img src="https://i.postimg.cc/SsGH1yFm/1567523594779.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Turkeybreast">Turkey breast
+    <img src="https://i.postimg.cc/sDbHcBQp/kosher-uncooked-free-range-turkey-breast-with-saddle-8-lbs-b2b4bc9fbd204f81f6b6b268246c58e0.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Venison">Venison
+    <img src="https://i.postimg.cc/d3k0NRKc/Venison-Loin-Steak-1400x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Walnuts">Walnuts
+    <img src="https://i.postimg.cc/zDV9FY2N/in-shell-walnuts.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+    background-color: #F2DDA7; /* You can use any color name, hex, rgb, etc. */
+    }
+    .box {
+    width: 300px;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    margin: 10px auto;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left; 
+    }
+
+    .interactive:hover {
+      border: 5px solid #FCBA0F; /* Change to any color you like */
+    }
+    .box-link {
+      text-decoration: none; /* Removes underline */
+      display: block; /* Makes the link fill the box */
+    }
+    a {
+      color: black;         /* Change to any color you want */
+      text-decoration: none; /* Removes the underline */
+    }
+    .interactive.selected {
+      border: 5px solid #fc910f;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <h1 style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2rem;">Vegetables</p>
+
+
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <div class="box interactive" data-name="Asparagus">Asparagus
+    <img src="https://i.postimg.cc/xjNrLz6G/Adobe-Stock-185606081-asparagus.webp" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Avocado">Avocado
+    <img src="https://i.postimg.cc/TYvsmHLY/shutterstock-116205556bacon-8888a354-175e-4a9b-a035-1a65dd4cbd91.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Beets">Beets
+    <img src="https://i.postimg.cc/Y0Kd6hSb/AN172-Beets-732x549-Thumb-0-1-732x549.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Broccoli">Broccoli
+    <img src="https://i.postimg.cc/bJdYd0rt/broccoli.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="BrusselSprouts">Brussels sprouts
+    <img src="https://i.postimg.cc/Jz6KTTnX/brussels-sprouts.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cabbage">Cabbage
+    <img src="https://i.postimg.cc/GtCjBVMV/673162168.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Carrots">Carrots
+    <img src="https://i.postimg.cc/SQB8FR1Y/Carrot-40927.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cauliflower">Cauliflower
+    <img src="https://i.postimg.cc/xdmHKgbr/Chou-fleur-02.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Celery">Celery
+    <img src="https://i.postimg.cc/Vkrb84gS/Celery-stalks-and-leaves-7860193.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Corn">Corn
+    <img src="https://i.postimg.cc/7LSGC6pf/Ears-corn.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cucumbers">Cucumbers
+    <img src="https://i.postimg.cc/MZ9cfgr3/497064006.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Garlic">Garlic
+    <img src="https://i.postimg.cc/R01hSYHX/Garlic-Bulb-Fresh-Whole-Each-a4f114d9-93ab-4d39-a8d6-9170536f57a9-f9f8e58c8e3e74894050c7c2267437e3.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Greenbeans">Green beans
+    <img src="https://i.postimg.cc/8Pr1k38k/Best-Green-Beans-Ever-Square-1.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Greens">Greens
+    <img src="https://i.postimg.cc/k579cg25/raw-green-organic-collard-greens-royalty-free-image-1601411648.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Kale">Kale
+    <img src="https://i.postimg.cc/tTTjKvt6/2522.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Leeks">Leeks
+    <img src="https://i.postimg.cc/Y9hS6CPz/leek-500x500.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lettuce">Lettuce
+    <img src="https://i.postimg.cc/dtM0CvjT/lettuce.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Mushrooms">Mushrooms
+    <img src="https://i.postimg.cc/g0Bz2P0d/a4131faa-c904-4574-aec5-cb6a20357c06-1136581625.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Onions">Onions
+    <img src="https://i.postimg.cc/3N2Y14FS/red-onions-960.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Peas">Peas
+    <img src="https://i.postimg.cc/Bvy3GchB/Sauteed-Peas-square.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Peppers">Peppers
+    <img src="https://i.postimg.cc/DygKzKjm/51Iz-T-wm45L-AC-UF1000-1000-QL80.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Potatoes">Potatoes
+    <img src="https://i.postimg.cc/TYjKz9DM/9417b1ce-4f9f-4b45-a146-ddb3bfdfbdd5-6a92cf0ab3dea92515028dd0ba8d4a97.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Pumpkin">Pumpkin
+    <img src="https://i.postimg.cc/52RTH98k/816L0BCqro-L-AC-UF894-1000-QL80.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Radish">Radish
+    <img src="https://i.postimg.cc/GpD7HFL4/11702.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Shallots">Shallots
+    <img src="https://i.postimg.cc/9MVp0sN5/21461311001-en-front-v1-400.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Spinach">Spinach
+    <img src="https://i.postimg.cc/brVH6rYv/Spinach-leaves-vitamins-source-person.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Squash">Squash
+    <img src="https://i.postimg.cc/25dQs2jP/2118.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sweetpotatoes">Sweet potatoes
+    <img src="https://i.postimg.cc/Vvhnqh4w/Ipomoea-batatas-006.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Tomatoes">Tomatoes
+    <img src="https://i.postimg.cc/T3ggbCbh/Tomato-je.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Turnips">Turnips
+    <img src="https://i.postimg.cc/LXC1SWcW/Turnip-2622027.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Zucchini">Zucchini
+    <img src="https://i.postimg.cc/tTTsB5st/Zucchini.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+</body>
+</html>

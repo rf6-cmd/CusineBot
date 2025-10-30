@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chicken Breast — CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background:#F2DDA7; font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif; margin:0; padding:18px; }
+    .wrap{max-width:740px;margin:0 auto}
+    h1{margin:0 0 8px;font-size:1.4rem}
+    .row{display:flex;gap:12px;align-items:center}
+    .box{background:#f9f9f9;border-radius:12px;padding:12px;margin:10px 0;box-shadow:0 4px 8px rgba(0,0,0,0.08)}
+    .controls{display:flex;gap:8px;margin:8px 0}
+    input[type="text"]{flex:1;padding:8px;border-radius:6px;border:1px solid #ddd}
+    button{background:#FCBA0F;border:none;padding:8px 10px;border-radius:6px;cursor:pointer}
+    ul{list-style:none;padding:0;margin:8px 0}
+    li{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;background:#fff;margin-bottom:6px;border:1px solid #eee}
+    a.recipe{color:#222;text-decoration:none;padding:8px 12px;border-radius:8px;background:#fff;display:inline-block;border:1px solid #eee}
+    .small{font-size:.9rem;color:#444}
+    .back{display:inline-block;margin-top:10px;text-decoration:none;color:#000}
+
+    /* tile + thumb to match other pages */
+    .tile {
+      width: 320px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: inherit;
+      box-sizing: border-box;
+      margin: 8px 0;
+    }
+    .thumb {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-left: auto;
+      flex: 0 0 84px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="CuisineBotProteins.html">&larr; Back to Proteins</a>
+    <h1>Chicken Breast</h1>
+    <p class="small">Reference page — create/manage an ingredients list and link recipes that use chicken breast.</p>
+
+    <section class="box" id="ingredients-section">
+      <h2 style="margin-top:0">Ingredients</h2>
+
+      <div class="controls">
+        <input id="new-ingredient" type="text" placeholder="Add ingredient (e.g. boneless skinless chicken breasts, panko)" />
+        <button id="add-btn">Add</button>
+        <button id="clear-btn" title="Clear list">Clear</button>
+      </div>
+
+      <ul id="ingredients-list" aria-live="polite"></ul>
+
+      <p class="small">Changes are saved locally in your browser. Use Export/Import for backups.</p>
+
+      <div style="margin-top:8px">
+        <button id="export-btn">Export (.txt)</button>
+        <input id="import-file" type="file" accept=".txt" style="display:none" />
+        <button id="import-btn">Import (.txt)</button>
+      </div>
+    </section>
+
+    <section class="box" id="recipes-section">
+      <h2 style="margin-top:0">Related recipes</h2>
+      <p class="small">Add or link recipe pages that use chicken breast. Create files in the same folder and update the href.</p>
+
+      <div class="row" style="flex-wrap:wrap">
+        <a class="recipe tile" href="grilled-chicken-breast.html">
+          <span>Grilled Chicken Breast (create file)</span>
+          <img class="thumb" src="https://i.postimg.cc/vmy5m632/Chicken-Breast.webp" alt="Grilled Chicken"/>
+        </a>
+        <a class="recipe tile" href="chicken-parmesan.html">
+          <span>Chicken Parmesan (create file)</span>
+          <img class="thumb" src="https://i.postimg.cc/vmy5m632/Chicken-Breast.webp" alt="Chicken Parmesan"/>
+        </a>
+        <a class="recipe tile" href="stuffed-chicken-breast.html">
+          <span>Stuffed Chicken Breast (create file)</span>
+          <img class="thumb" src="https://i.postimg.cc/vmy5m632/Chicken-Breast.webp" alt="Stuffed Chicken"/>
+        </a>
+      </div>
+
+      <div style="margin-top:12px">
+        <input id="new-recipe-title" type="text" placeholder="New recipe title (e.g. Lemon Herb Chicken)" />
+        <input id="new-recipe-href" type="text" placeholder="File name (e.g. lemon-herb-chicken.html)" style="margin-top:6px" />
+        <div style="margin-top:8px">
+          <button id="add-recipe-btn">Add recipe link</button>
+        </div>
+      </div>
+
+      <ul id="recipes-list" style="margin-top:10px"></ul>
+    </section>
+  </div>
+
+  <script>
+    const ING_KEY = 'cuisine-chickenbreast-ingredients';
+    const REC_KEY = 'cuisine-chickenbreast-recipes';
+
+    const els = {
+      list: document.getElementById('ingredients-list'),
+      newInput: document.getElementById('new-ingredient'),
+      addBtn: document.getElementById('add-btn'),
+      clearBtn: document.getElementById('clear-btn'),
+
+      recipesList: document.getElementById('recipes-list'),
+      newRecipeTitle: document.getElementById('new-recipe-title'),
+      newRecipeHref: document.getElementById('new-recipe-href'),
+      addRecipeBtn: document.getElementById('add-recipe-btn'),
+
+      exportBtn: document.getElementById('export-btn'),
+      importFile: document.getElementById('import-file'),
+      importBtn: document.getElementById('import-btn'),
+    };
+
+    function load(key, fallback){ try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch(e){ return fallback; } }
+    function save(key, v){ localStorage.setItem(key, JSON.stringify(v)); }
+
+    let ingredients = load(ING_KEY, [
+      'Boneless skinless chicken breasts',
+      'Chicken stock',
+      'Olive oil',
+      'Salt & pepper',
+      'Panko breadcrumbs'
+    ]);
+
+    function renderIngredients(){
+      els.list.innerHTML = '';
+      ingredients.forEach((name, idx) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <input type="checkbox" aria-label="Mark ${name}"/>
+          <span style="flex:1">${name}</span>
+          <button data-idx="${idx}" class="remove" title="Remove">✕</button>
+        `;
+        els.list.appendChild(li);
+      });
+    }
+
+    els.addBtn.addEventListener('click', () => {
+      const v = els.newInput.value.trim();
+      if(!v) return;
+      ingredients.push(v);
+      els.newInput.value = '';
+      save(ING_KEY, ingredients);
+      renderIngredients();
+    });
+    els.newInput.addEventListener('keydown', e => { if(e.key === 'Enter') els.addBtn.click(); });
+
+    els.clearBtn.addEventListener('click', () => {
+      if(!confirm('Clear the entire ingredients list?')) return;
+      ingredients = [];
+      save(ING_KEY, ingredients);
+      renderIngredients();
+    });
+
+    els.list.addEventListener('click', e => {
+      if(e.target.matches('button.remove')){
+        const idx = Number(e.target.dataset.idx);
+        ingredients.splice(idx,1);
+        save(ING_KEY, ingredients);
+        renderIngredients();
+      }
+    });
+
+    let recipes = load(REC_KEY, [
+      {title: 'Grilled Chicken Breast', href: 'grilled-chicken-breast.html'},
+      {title: 'Chicken Parmesan', href: 'chicken-parmesan.html'}
+    ]);
+
+    function renderRecipes(){
+      els.recipesList.innerHTML = '';
+      recipes.forEach((r, idx) => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '6px';
+        li.innerHTML = `<a href="${r.href}" target="_blank">${r.title}</a> &nbsp;
+                        <button data-idx="${idx}" class="remove-rec" title="Remove">✕</button>`;
+        els.recipesList.appendChild(li);
+      });
+    }
+
+    els.addRecipeBtn.addEventListener('click', () => {
+      const title = els.newRecipeTitle.value.trim();
+      const href = els.newRecipeHref.value.trim();
+      if(!title || !href) return alert('Provide both title and file name.');
+      recipes.push({title, href});
+      save(REC_KEY, recipes);
+      els.newRecipeTitle.value = '';
+      els.newRecipeHref.value = '';
+      renderRecipes();
+    });
+
+    els.recipesList.addEventListener('click', e => {
+      if(e.target.matches('button.remove-rec')){
+        const idx = Number(e.target.dataset.idx);
+        recipes.splice(idx,1);
+        save(REC_KEY, recipes);
+        renderRecipes();
+      }
+    });
+
+    els.exportBtn.addEventListener('click', () => {
+      const data = ingredients.join('\r\n');
+      const blob = new Blob([data], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'chickenbreast-ingredients.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    els.importBtn.addEventListener('click', () => els.importFile.click());
+    els.importFile.addEventListener('change', (e) => {
+      const f = e.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const lines = reader.result.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+        if(lines.length){
+          ingredients = lines;
+          save(ING_KEY, ingredients);
+          renderIngredients();
+        }
+      };
+      reader.readAsText(f);
+      els.importFile.value = '';
+    });
+
+    renderIngredients();
+    renderRecipes();
+  </script>
+</body>
+</html>

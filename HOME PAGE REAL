@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <style>
+    body {
+      background-color: #F2DDA7;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+    }
+
+    .box {
+      width: 300px;
+      padding: 20px;
+      margin: 10px auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: border 0.2s, background-color 0.2s;
+    }
+
+    .selected {
+      border: 5px solid #FCBA0F;
+      background-color: #ffe9a3;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    #connectBtn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #FCBA0F;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CuisineBot</h1>
+  <p style="font-size: 2rem;">Choose Ingredients</p>
+
+  <a href="CuisineBotGrains.html" class="box-link"><div class="box">Grains</div></a>
+  <a href="CuisineBotVegetables.html" class="box-link"><div class="box">Vegetables</div></a>
+  <a href="CuisineBotProteins.html" class="box-link"><div class="box">Proteins</div></a>
+  <a href="CuisineBotFruits.html" class="box-link"><div class="box">Fruits</div></a>
+  <a href="CuisineBotDairy.html" class="box-link"><div class="box">Dairy</div></a>
+  <div class="box">Enter</div>
+
+  <button id="connectBtn">🔌 Connect Arduino</button>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    let selectedIndex = 0;
+    boxes[selectedIndex].classList.add('selected');
+
+    async function connectSerial() {
+      try {
+        const port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable);
+        const inputStream = decoder.readable.getReader();
+
+        while (true) {
+          const { value, done } = await inputStream.read();
+          if (done) break;
+          if (value) handleCommand(value.trim());
+        }
+      } catch (err) {
+        console.error('Serial connection failed:', err);
+      }
+    }
+
+    function handleCommand(cmd) {
+      console.log('Received:', cmd);
+
+      if (cmd === 'UP') {
+        boxes[selectedIndex].classList.remove('selected');
+        selectedIndex = (selectedIndex - 1 + boxes.length) % boxes.length;
+        boxes[selectedIndex].classList.add('selected');
+      }
+
+      else if (cmd === 'DOWN') {
+        boxes[selectedIndex].classList.remove('selected');
+        selectedIndex = (selectedIndex + 1) % boxes.length;
+        boxes[selectedIndex].classList.add('selected');
+      }
+
+      else if (cmd === 'ENTER') {
+  const selectedBox = boxes[selectedIndex];
+  const link = selectedBox.closest('a');
+
+  if (link && link.href) {
+    // Navigate manually to the link’s href
+    window.location.href = link.href;
+  } else {
+    alert(`You selected: ${selectedBox.textContent}`);
+  }
+}
+    }
+
+    document.getElementById('connectBtn').addEventListener('click', connectSerial);
+  </script>
+</body>
+</html>

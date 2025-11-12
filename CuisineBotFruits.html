@@ -38,6 +38,16 @@
     .interactive.selected {
       border: 5px solid #fc910f;
     }
+    .box:focus {
+  outline: none;
+  border: 5px solid #fcd060;
+}
+ .box.selected {
+      border: 5px solid #fc910f;
+      background-color: #ffe8c2;
+      transition: background-color 0.2s ease, border 0.2s ease;
+    }
+
   </style>
 </head>
 
@@ -50,97 +60,97 @@
 
 
   <a href="CusineBot.html" class="box-link">
-    <div class="box interactive">Back
+    <div class="box interactive" data-selectable="false" tabindex="0">Back
       <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
     </div>
   </a>
 
-  <div class="box interactive" data-name="Apple">Apple
+  <div class="box interactive" data-name="Apple" tabindex="0">Apple
     <img src="https://i.postimg.cc/8P40jdV6/Fresh-Red-Delicious-Apple-Each-7320e63a-de46-4a16-9b8c-526e15219a12-3-e557c1ad9973e1f76f512b34950243.avif" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Apricot">Apricot
+  <div class="box interactive" data-name="Apricot" tabindex="0">Apricot
     <img src="https://i.postimg.cc/ZYFfMP0m/images.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Banana">Banana
+  <div class="box interactive" data-name="Banana" tabindex="0">Banana
     <img src="https://i.postimg.cc/CKq7Hk9b/Banana-Single.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Blackberry">Blackberry
+  <div class="box interactive" data-name="Blackberry" tabindex="0">Blackberry
     <img src="https://i.postimg.cc/4yBQN5h9/80886A.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Blueberry">Blueberry
+  <div class="box interactive" data-name="Blueberry" tabindex="0">Blueberry
     <img src="https://i.postimg.cc/MTw7747p/1-bddce89c-0097-45d3-a062-ac4a1a57be4e.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Cantaloupe">Cantaloupe
+  <div class="box interactive" data-name="Cantaloupe" tabindex="0">Cantaloupe
     <img src="https://i.postimg.cc/kXGxvWbT/Cantaloupe-each-fb4c18a5-9367-4770-b99f-7518c72db482-5609c32e87a3110b734aad048bf9fe35.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Cherry">Cherry
+  <div class="box interactive" data-name="Cherry" tabindex="0">Cherry
     <img src="https://i.postimg.cc/KzQMnYcH/istockphoto-506627545-612x612.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Cranberry">Cranberry
+  <div class="box interactive" data-name="Cranberry" tabindex="0">Cranberry
     <img src="https://i.postimg.cc/c1bKZ2vS/cranberry-steven-foster-square.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Dates">Dates
+  <div class="box interactive" data-name="Dates" tabindex="0">Dates
     <img src="https://i.postimg.cc/XJvJ6k3x/Basically-Medjool-Dates.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Dragonfruit">Dragon Fruit
+  <div class="box interactive" data-name="Dragonfruit" tabindex="0">Dragonfruit
     <img src="https://i.postimg.cc/76XKfDFr/3-count-image-of-dragon-fruit-red-fruit-1125636341-512x512-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
    </div>
-  <div class="box interactive" data-name="Figs">Figs
+  <div class="box interactive" data-name="Figs" tabindex="0">Figs
     <img src="https://i.postimg.cc/HWqyXFdf/figs-2056729.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Grapes">Grapes
+  <div class="box interactive" data-name="Grapes" tabindex="0">Grapes
     <img src="https://i.postimg.cc/mrpcD5dR/000325211-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Grapefruit">Grapefruit
+  <div class="box interactive" data-name="Grapefruit" tabindex="0">Grapefruit
     <img src="https://i.postimg.cc/jSsChb9k/Fresh-Red-Grapefruit-Each-9b886c2a-7fc2-4dbd-98fe-99c8e48e6944-f2698681c6f777003cfd13d7c6086d09.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Kiwi">Kiwi
+  <div class="box interactive" data-name="Kiwi" tabindex="0">Kiwi
     <img src="https://i.postimg.cc/gkp0YpYR/kiwi.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Lemon">Lemon
+  <div class="box interactive" data-name="Lemon" tabindex="0">Lemon
     <img src="https://i.postimg.cc/PxZtj39b/184080144.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Lime">Lime
+  <div class="box interactive" data-name="Lime" tabindex="0">Lime
     <img src="https://i.postimg.cc/L8X2X6G8/Fresh-Lime-Each-12314833-2e54-4739-94a2-7db45b63109d-16ff07e3c111df9be4158853c2e505ef.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Mandarin">Mandarin
+  <div class="box interactive" data-name="Mandarin" tabindex="0">Mandarin
     <img src="https://i.postimg.cc/rFh2v2z6/mandarins.png" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Mango">Mango
+  <div class="box interactive" data-name="Mango" tabindex="0">Mango
     <img src="https://i.postimg.cc/yY8whpjn/bg-home-right-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Orange">Orange
+  <div class="box interactive" data-name="Orange" tabindex="0">Orange
     <img src="https://i.postimg.cc/rpNJPMFj/oranges.png" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Papaya">Papaya
+  <div class="box interactive" data-name="Papaya" tabindex="0">Papaya
     <img src="https://i.postimg.cc/GpKFjKqQ/PAPAYA-YELLOW-600x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Peach">Peach
+  <div class="box interactive" data-name="Peach" tabindex="0">Peach
     <img src="https://i.postimg.cc/sfqpKv4r/0fb19ee3-a85c-4519-bc82-0cffa554cfa6-3f1325ff0c0b5334793483425bc92ace.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Pear">Pear
+  <div class="box interactive" data-name="Pear" tabindex="0">Pear
     <img src="https://i.postimg.cc/JhpXXnzK/IMG-2063-1200x1200-crop-center.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Pineapple">Pineapple
+  <div class="box interactive" data-name="Pineapple" tabindex="0">Pineapple
     <img src="https://i.postimg.cc/WbZyTD2B/organic-pineaple.png" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Plum">Plum
+  <div class="box interactive" data-name="Plum" tabindex="0">Plum
     <img src="https://i.postimg.cc/rsrfVbL5/grocerapp-plum-5f659dc2d89da.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Pomegranate">Pomegranate
+  <div class="box interactive" data-name="Pomegranate" tabindex="0">Pomegranate
     <img src="https://i.postimg.cc/rpZjScVS/pomegranate-seeds-r.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Raspberry">Raspberry
+  <div class="box interactive" data-name="Raspberry" tabindex="0">Raspberry
     <img src="https://i.postimg.cc/6qJd0pDV/BERRAS-RD-HERITAGE-2T.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Strawberry">Strawberry
+  <div class="box interactive" data-name="Strawberry" tabindex="0">Strawberry
     <img src="https://i.postimg.cc/pdmzMjv5/20170323-MOB6231-FINAL-crop.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
-  <div class="box interactive" data-name="Watermelon">Watermelon
+  <div class="box interactive" data-name="Watermelon" tabindex="0">Watermelon
     <img src="https://i.postimg.cc/kg4tWSB0/Watermelon.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
   </div>
   <a href="CusineBot.html" class="box-link">
-    <div class="box interactive">Back
+    <div class="box interactive" data-selectable="false" tabindex="0">Back
       <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
     </div>
   </a>

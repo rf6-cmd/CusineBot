@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+    background-color: #F2DDA7; /* You can use any color name, hex, rgb, etc. */
+    }
+    .box {
+    width: 300px;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    margin: 10px auto;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left; 
+    }
+
+    .interactive:hover {
+      border: 5px solid #FCBA0F; /* Change to any color you like */
+    }
+    .box-link {
+      text-decoration: none; /* Removes underline */
+      display: block; /* Makes the link fill the box */
+    }
+    a {
+      color: black;         /* Change to any color you want */
+      text-decoration: none; /* Removes the underline */
+    }
+    .interactive.selected {
+      border: 5px solid #fc910f;
+    }
+    .box:focus {
+  outline: none;
+  border: 5px solid #fcd060;
+}
+ .box.selected {
+      border: 5px solid #fc910f;
+      background-color: #ffe8c2;
+      transition: background-color 0.2s ease, border 0.2s ease;
+    }
+
+  </style>
+</head>
+
+
+
+<body>
+  <h1 style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2rem;">Fats, Oils, and Sweets</p>
+
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <div class="box interactive" data-name="Canolaoil" tabindex="0">Canola Oil
+    <img src="https://i.postimg.cc/VvjKWvJc/115150189-ECOM.webp" alt="Amaranth" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Coconutoil" tabindex="0">Coconut Oil
+    <img src="https://i.postimg.cc/XvGcgqh0/Coconut-and-oil.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cornsyrup" tabindex="0">Corn Syrup
+    <img src="https://i.postimg.cc/908rStRY/karo-1.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Honey" tabindex="0">Honey
+    <img src="https://i.postimg.cc/9Fsf7fGT/AA-How-to-tell-teh-difference-between-good-and-bad-honey-1080x.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+    <div class="box interactive" data-name="Ketchup" tabindex="0">Ketchup
+    <img src="https://i.postimg.cc/dV8JZjsn/b2fc4fb2-7f49-4165-aac3-21c889c89f39-134987bdc0e110fe44ab978d012df12b.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Maplesyrup" tabindex="0">Maple Syrup
+    <img src="https://i.postimg.cc/Sxph4Y6W/images.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Mayonnaise" tabindex="0">Mayonnaise
+    <img src="https://i.postimg.cc/zG5Gjcch/marketing-view-color-front-content-hub-11508599-f435a8404d725db65415f33a4a54af6a.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Mustard" tabindex="0">Mustard
+    <img src="https://i.postimg.cc/ZYpmML3H/marketing-view-color-front-content-hub-8467540-92cf91209d1e1540d34c1ca951c62ce4.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Oliveoil" tabindex="0">Oliveoil
+    <img src="https://i.postimg.cc/qM4PZH4F/Great-Value-Extra-Virgin-Olive-Oil-101-fl-oz-Bottle-f06ca209-299a-4e81-b3dd-20e93557580a-e2a6f3a6add.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Peanutoil" tabindex="0">Peanut Oil
+    <img src="https://i.postimg.cc/fWjFdqmj/Great-Value-Peanut-Oil-1-gal-7dd55afc-39e2-48e1-95cb-7e6496b9934f-c82dc924ddc582107eb1da48bcc39d2a.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sesameoil" tabindex="0">Sesame Oil
+    <img src="https://i.postimg.cc/7hmmWcnp/Sesame-Oil.jpg" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="SoySauce" tabindex="0">Soy Sauce
+    <img src="https://i.postimg.cc/przF61Md/00041390000034-A1N1-15.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sugar" tabindex="0">Sugar
+    <img src="https://i.postimg.cc/XJg8rhmN/1624623229427.webp" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Vegetableoil" tabindex="0">Vegetable oil
+    <img src="https://i.postimg.cc/VkbWq528/Great-Value-Vegetable-Oil-48-fl-oz-16c0b5fb-8784-4dce-8f99-ffa356e22bd0-7b4c3302ebad6add2d02589306a0.avif" alt="Barley" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false" tabindex="0">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+</body>
+</html>

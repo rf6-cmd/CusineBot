@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocolate Cake</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      background-color: #F2DDA7;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, p {
+      text-align: center;
+      color: black;
+    }
+
+    .box {
+      width: 300px;
+      padding: 20px;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: background-color 0.2s ease, border 0.2s ease;
+    }
+
+    .interactive {
+      cursor: pointer;
+    }
+
+    .interactive:hover {
+      border: 5px solid #FCBA0F;
+    }
+
+    .interactive:focus {
+      outline: none;
+      border: 5px solid #fcd060;
+    }
+
+    .interactive.selected {
+      border: 5px solid #fc910f;
+      background-color: #ffe8c2;
+    }
+
+    ul, ol {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Back button container */
+    #back-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* Back button styling */
+    .back-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 5px solid #FCBA0F;
+      transition: background-color 0.2s ease, border 0.2s ease;
+    }
+
+    .back-box:hover {
+      background-color: #ffe8c2;
+    }
+
+    .back-box:focus {
+      outline: none;
+      border: 5px solid #fcd060;
+    }
+
+    .box-link {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CuisineBot</h1>
+  <p style="font-size: 2rem;">Chocolate Cake</p>
+
+  <div class="box interactive" data-name="Chocolate Cake" tabindex="0">
+    <strong>Ingredients:</strong>
+    <ul>
+      <li>1 and 1/2 cups all-purpose flour</li>
+      <li>1 cup granulated sugar</li>
+      <li>1/4 cup unsweetened cocoa powder</li>
+      <li>1 teaspoon baking soda</li>
+      <li>1/2 teaspoon salt</li>
+      <li>1 cup water</li>
+      <li>1/3 cup vegetable oil</li>
+      <li>1 teaspoon vanilla extract</li>
+      <li>1 teaspoon white vinegar</li>
+    </ul>
+
+    <h2>Instructions:</h2>
+    <ol>
+      <li>Preheat your oven to 350°F (175°C).</li>
+      <li>In a large bowl, whisk together the flour, sugar, cocoa powder, baking soda, and salt.</li>
+      <li>Add the water, vegetable oil, vanilla extract, and vinegar to the dry ingredients.</li>
+      <li>Mix until the batter is smooth and free of lumps.</li>
+      <li>Pour the batter into a greased 8-inch round cake pan.</li>
+      <li>Bake for 30–35 minutes, or until a toothpick inserted into the center comes out clean.</li>
+      <li>Let the cake cool completely before serving or adding frosting.</li>
+      <li>Enjoy your delicious homemade chocolate cake! 🍫🎂</li>
+    </ol>
+  </div>
+
+  <div id="back-container">
+    <a href="recipes.html" class="box-link">
+      <div class="box back-box interactive" data-selectable="false" tabindex="0">
+        <span>Back</span>
+        <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="25" height="25" />
+      </div>
+    </a>
+  </div>
+</body>
+</html>

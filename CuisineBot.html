@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Website</title>
+
+  <style>
+    body {
+      background-color: #F2DDA7;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .box {
+      width: 300px;
+      padding: 20px;
+      margin: 10px auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .selected {
+      border: 5px solid #FCBA0F;
+      background-color: #ffe9b3;
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
+    }
+
+    .box-link {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    #connect {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.2rem;
+      background-color: #FCBA0F;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 style="color:black; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align:center; font-size: 2rem;">Choose Ingredients</p>
+
+  <!-- Button to connect Arduino -->
+  <button id="connect">Connect Arduino</button>
+
+  <!-- Boxes -->
+  <a href="CuisineBotGrains.html" class="box-link"><div class="box interactive">Grains</div></a>
+  <a href="CuisineBotVegetables.html" class="box-link"><div class="box interactive">Vegetables</div></a>
+  <a href="CuisineBotProteins.html" class="box-link"><div class="box interactive">Proteins</div></a>
+  <a href="CuisineBotFruits.html" class="box-link"><div class="box interactive">Fruits</div></a>
+  <a href="CuisineBotDairy.html" class="box-link"><div class="box interactive">Dairy</div></a>
+  <div class="box interactive" id="enterBox">Enter</div>
+
+  <script>
+    let port;
+    let reader;
+    let currentIndex = 0;
+
+    const items = Array.from(document.querySelectorAll(".box"));
+
+    // highlight the first item
+    items[currentIndex].classList.add("selected");
+
+    document.getElementById("connect").addEventListener("click", async () => {
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 115200 });
+
+      const textDecoder = new TextDecoderStream();
+      const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+      reader = textDecoder.readable.getReader();
+
+      listenToArduino();
+    });
+
+    async function listenToArduino() {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        if (!value) continue;
+
+        console.log("Arduino says:", value);
+
+        let cmd = value.trim();
+
+        if (cmd.includes("UP")) moveSelection(-1);
+        if (cmd.includes("DOWN")) moveSelection(1);
+      }
+    }
+
+    function moveSelection(direction) {
+      items[currentIndex].classList.remove("selected");
+
+      currentIndex += direction;
+
+      if (currentIndex < 0) currentIndex = items.length - 1;
+      if (currentIndex >= items.length) currentIndex = 0;
+
+      items[currentIndex].classList.add("selected");
+
+      // Optional autoscroll
+      items[currentIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+

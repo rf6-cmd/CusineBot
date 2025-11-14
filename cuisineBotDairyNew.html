@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #F2DDA7;
+    }
+    .box {
+      width: 300px;
+      height: 100px;
+      padding-top: 30px;
+      padding-left: 20px;
+      margin: 10px auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: left; 
+    }
+    .interactive:hover {
+      border: 5px solid #FCBA0F;
+    }
+    .box-link {
+      text-decoration: none;
+      display: block;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .interactive.selected {
+      border: 5px solid #fc910f;
+    }
+    #connectBtn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2rem;">Dairy</p>
+
+  <button id="connectBtn">Connect Arduino</button>
+
+  <!-- Back button (top) -->
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-name="Back">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <!-- Dairy items -->
+  <div class="box interactive" data-name="Butter">Butter
+    <img src="https://i.postimg.cc/Y013FWDb/i-Stock-000006937653Small.jpg" alt="Butter" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Buttermilk">Buttermilk
+    <img src="https://i.postimg.cc/g2MK3d4X/Template-Size-for-Blog-Photos-12-500x500.webp" alt="Buttermilk" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cheese">Cheese
+    <img src="https://i.postimg.cc/Mpryv5K2/Guide-to-cheese-1024x851.jpg" alt="Cheese" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Clottedcream">Clotted cream
+    <img src="https://i.postimg.cc/52Z6hR2C/clottedcream-blog-4-of-8-2.jpg" alt="Clottedcream" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Condensedmilk">Condensed milk
+    <img src="https://i.postimg.cc/50fN1dds/sweetend-condensed-milk-square.webp" alt="Condensedmilk" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cottagecheese">Cottage cheese
+    <img src="https://i.postimg.cc/yxQNvfGS/ba-cottage-cheese-1.webp" alt="Cottagecheese" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cream">Cream
+    <img src="https://i.postimg.cc/9fhct5fn/Chantilly-cream-5.webp" alt="Cream" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Creamcheese">Cream cheese
+    <img src="https://i.postimg.cc/zGmN8ZTV/Easiest-Homemade-Cream-Cheese-FEATURE.jpg" alt="Creamcheese" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Custard">Custard
+    <img src="https://i.postimg.cc/sfqd4d6G/Custard.jpg" alt="Custard" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Evaporatedmilk">Evaporated milk
+    <img src="https://i.postimg.cc/qvLpLDCB/1633333315185.webp" alt="Evaporatedmilk" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="IceCream">Ice Cream
+    <img src="https://i.postimg.cc/nLrf1FJB/vegan-vanilla-ice-cream-featured.jpg" alt="IceCream" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Kefir">Kefir
+    <img src="https://i.postimg.cc/QxqLG9NQ/eating-grains-alt-634x.webp" alt="Kefir" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Powderedmilk">Powdered milk
+    <img src="https://i.postimg.cc/j2Q1bmTY/100071-Bakers-Dry-Milk-Powder-1-01800.jpg" alt="Powderedmilk" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sourcream">Sour cream
+    <img src="https://i.postimg.cc/nrZd02mr/Sour-Cream-chips-above.jpg" alt="Sourcream" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Whey">Whey
+    <img src="https://i.postimg.cc/kgZfkq8m/b8f20ba454daac59-XJWFh3d0-large.avif" alt="Whey" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Wheyprotein">Whey protein
+    <img src="https://i.postimg.cc/43VbqtsT/56.avif" alt="Wheyprotein" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Whippedcream">Whipped cream
+    <img src="https://i.postimg.cc/d1ndcjXt/Whipped-Cream-Recipe-SQ-500x500.jpg" alt="Whippedcream" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Yogurt">Yogurt
+    <img src="https://i.postimg.cc/3xpvxT6S/How-to-Make-Yogurt-7.jpg" alt="Yogurt" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+
+  <!-- Back button (bottom) -->
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-name="Back">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <script>
+    const boxes = Array.from(document.querySelectorAll('.interactive'));
+    let selectedIndex = 0;
+
+    function findNextSelectable(startIndex, direction = 1) {
+      let idx = startIndex;
+      do {
+        idx = (idx + direction + boxes.length) % boxes.length;
+      } while (!boxes[idx].dataset.name);
+      return idx;
+    }
+
+    selectedIndex = findNextSelectable(-1, 1);
+    boxes[selectedIndex].classList.add('selected');
+
+    async function connectSerial() {
+      try {
+        const port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable);
+        const input = decoder.readable.getReader();
+
+        while (true) {
+          const { value, done } = await input.read();
+          if (done) break;
+          if (value) handleCommand(value.trim());
+        }
+      } catch (err) {
+        console.error("Serial error:", err);
+      }
+    }
+
+    function handleCommand(cmd) {
+      if (cmd === "UP") {
+        boxes[selectedIndex].classList.remove("selected");
+        selectedIndex = findNextSelectable(selectedIndex, -1);
+        boxes[selectedIndex].classList.add("selected");
+      } 
+      else if (cmd === "DOWN") {
+        boxes[selectedIndex].classList.remove("selected");
+        selectedIndex = findNextSelectable(selectedIndex, 1);
+        boxes[selectedIndex].classList.add("selected");
+      } 
+      else if (cmd === "ENTER") {
+        const selectedBox = boxes[selectedIndex];
+        const link = selectedBox.closest("a");
+        if (link && link.href) {
+          window.location.href = link.href;
+        }
+      }
+    }
+
+    document.getElementById("connectBtn").addEventListener("click", connectSerial);
+  </script>
+</body>
+</html>

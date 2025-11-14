@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuisineBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      background-color: #F2DDA7;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .box {
+      width: 300px;
+      height: 100px;
+      padding-top: 30px;
+      padding-left: 20px;
+      margin: 10px auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left; 
+      transition: border 0.2s, background-color 0.2s;
+    }
+    .interactive:hover {
+      border: 5px solid #FCBA0F;
+    }
+    .box-link {
+      text-decoration: none;
+      display: block;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .highlighted {
+      border: 5px solid #fc910f;
+      background-color: #ffe9a3;
+    }
+    .selected {
+      background-color: #ffd580;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color:black; font-size: 1.5rem;">CuisineBot</h1>
+  <p style="text-align: center; font-size: 2rem;">Proteins</p>
+
+  <!-- BACK BUTTON -->
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" alt="Back" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <!-- PROTEIN INGREDIENTS -->
+  <div class="box interactive" data-name="Almonds">Almonds
+    <img src="https://i.postimg.cc/3RMVN1zt/Untitleddesign-16.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Anchovies">Anchovies
+    <img src="https://i.postimg.cc/fW8Cg5Bt/Anchovies-garlic-opentin.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Chickenbreast">Chicken breast
+    <img src="https://i.postimg.cc/vmy5m632/Chicken-Breast.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Clams">Clams
+    <img src="https://i.postimg.cc/FRRdfbcC/HD-201007-r-sailors-clams-079d35aa081d442596158ffa42c44d1b.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Cod">Cod
+    <img src="https://i.postimg.cc/wxkxKRm9/baked-cod-featured-2021.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Crab">Crab
+    <img src="https://i.postimg.cc/HWvK7pGh/1568735460995.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="DuckBreast">Duck breast
+    <img src="https://i.postimg.cc/jqn9Npss/DSC-0925bmoulardduckbreatweb-498x498-crop-center.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Eggs">Eggs
+    <img src="https://i.postimg.cc/zGz0d61W/Pressure-Cooker-Hard-Boiled-Eggs-EXPS-TOHD24-258639-Christine-Ma-3.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Goatmeat">Goat meat
+    <img src="https://i.postimg.cc/d083LHLZ/IMG-1509-1708626244.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Groundbeef">Ground beef
+    <img src="https://i.postimg.cc/mDg4B8MT/IMG-3660-58558.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Kidneybeans">Kidney beans
+    <img src="https://i.postimg.cc/qR5P004W/81uo-HWrn-PPL-01ce1590-2306-470e-bcd0-ab0c2e38a99c-700x700.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lamb">Lamb
+    <img src="https://i.postimg.cc/rF1qG08T/lamb-chops-5-1200.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lentils">Lentils
+    <img src="https://i.postimg.cc/4Ngg3fpz/how-to-cook-red-lentils-main-1200-1.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Lobster">Lobster
+    <img src="https://i.postimg.cc/C109pfmn/Atlantic-Lobster-900x.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Mutton">Mutton
+    <img src="https://i.postimg.cc/YCgX2C4b/1629839385538.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Peanutbutter">Peanut butter
+    <img src="https://i.postimg.cc/jjthsQYD/homemade-peanut-butter-1x1-2.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Pork">Pork
+    <img src="https://i.postimg.cc/52MB3q03/six-hour-pork-roast.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Salmon">Salmon
+    <img src="https://i.postimg.cc/cLNMCftF/Baked-Salmon-Re-Edited-LR.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sardines">Sardines
+    <img src="https://i.postimg.cc/13PwsPLs/k-Photo-Series-2020-03-love-letter-sardine-sandwich-LL-Sardine1.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Sausage">Sausage
+    <img src="https://i.postimg.cc/ncfQGpV1/Baked-Italian-Sausage.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Shrimp">Shrimp
+    <img src="https://i.postimg.cc/1XGXjVRC/shrimp-main-1200.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Tofu">Tofu
+    <img src="https://i.postimg.cc/R0WFzDVM/tofu-6a6a4ef.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Trout">Trout
+    <img src="https://i.postimg.cc/J7xWPQMp/Grilled-Rainbow-Trout-Remoulade-Sauce-HP.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Tuna">Tuna
+    <img src="https://i.postimg.cc/SsGH1yFm/1567523594779.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Turkeybreast">Turkey breast
+    <img src="https://i.postimg.cc/sDbHcBQp/kosher-uncooked-free-range-turkey-breast-with-saddle-8-lbs-b2b4bc9fbd204f81f6b6b268246c58e0.avif" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Venison">Venison
+    <img src="https://i.postimg.cc/d3k0NRKc/Venison-Loin-Steak-1400x.webp" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+  <div class="box interactive" data-name="Walnuts">Walnuts
+    <img src="https://i.postimg.cc/zDV9FY2N/in-shell-walnuts.jpg" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+  </div>
+
+  <!-- SECOND BACK BUTTON -->
+  <a href="CusineBot.html" class="box-link">
+    <div class="box interactive" data-selectable="false">Back
+      <img src="https://i.postimg.cc/cHkrMFpR/93634.png" width="100" height="100" style="float: right; margin-right: 10px; margin-top: -10px;"/>
+    </div>
+  </a>
+
+  <!-- CONNECT BUTTON -->
+  <button id="connectBtn">🔌 Connect Arduino</button>
+
+  <script>
+    const boxes = document.querySelectorAll('.interactive');
+    let selectedIndex = 0;
+
+    // Highlight first box
+    boxes[selectedIndex].classList.add('highlighted');
+
+    async function connectSerial() {
+      try {
+        const port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable);
+        const input = decoder.readable.getReader();
+
+        while (true) {
+          const { value, done } = await input.read();
+          if (done) break;
+          if (value) handleCommand(value.trim());
+        }
+      } catch (err) {
+        console.error("Serial error:", err);
+      }
+    }
+
+    function handleCommand(cmd) {
+      const highlightedBox = boxes[selectedIndex];
+      const isBackButton = highlightedBox.dataset.selectable === "false";
+      const link = highlightedBox.closest("a");
+
+      if (cmd === "UP") {
+        highlightedBox.classList.remove("highlighted");
+        selectedIndex = (selectedIndex - 1 + boxes.length) % boxes.length;
+        boxes[selectedIndex].classList.add("highlighted");
+      } else if (cmd === "DOWN") {
+        highlightedBox.classList.remove("highlighted");
+        selectedIndex = (selectedIndex + 1) % boxes.length;
+        boxes[selectedIndex].classList.add("highlighted");
+      } else if (cmd === "ENTER") {
+        if (isBackButton && link && link.href) {
+          window.location.href = link.href;
+        } else {
+          // Toggle selection without removing highlight
+          highlightedBox.classList.toggle("selected");
+        }
+      }
+    }
+
+    document.getElementById("connectBtn").addEventListener("click", connectSerial);
+  </script>
+</body>
+</html>
